@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b2i0iap7bx1uy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rob" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rob"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Rob"]
+
+[node name="Bob" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bob"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bob"]
