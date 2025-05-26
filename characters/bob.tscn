@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://db4euh32djnmt"]
+[gd_scene load_steps=3 format=3 uid="uid://db4euh32djnmt"]
 
-[ext_resource type="Script" uid="uid://ci2a38j34xjuw" path="res://scripts/bob.gd" id="1_y812g"]
+[ext_resource type="Texture2D" uid="uid://ci1pphumxdfao" path="res://art/ligga.png" id="1_iqfss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl264"]
+size = Vector2(43, 62)
 
 [node name="Bob" type="CharacterBody2D"]
-script = ExtResource("1_y812g")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 1)
+shape = SubResource("RectangleShape2D_pl264")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iqfss")

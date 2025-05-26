@@ -1,10 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2i0iap7bx1uy"]
+[gd_scene load_steps=9 format=3 uid="uid://b2i0iap7bx1uy"]
 
-[ext_resource type="PackedScene" uid="uid://bdmc5k6m0k2ew" path="res://characters/rob.tscn" id="1_j8ivh"]
+[ext_resource type="Script" path="res://scripts/rob.gd" id="1_gya51"]
 [ext_resource type="PackedScene" uid="uid://db4euh32djnmt" path="res://characters/bob.tscn" id="2_nd71p"]
+[ext_resource type="Script" path="res://scripts/bob.gd" id="2_yclgf"]
+[ext_resource type="Texture2D" uid="uid://bwmenqyqrbf26" path="res://chigga.svg" id="3_m08py"]
+[ext_resource type="PackedScene" uid="uid://dd28ppi3mpjwi" path="res://characters/rob.tscn" id="4_nbdn7"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="5_g05e6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijk1m"]
+texture = ExtResource("3_m08py")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_144gy"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_ijk1m")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Rob" parent="." instance=ExtResource("1_j8ivh")]
-
 [node name="Bob" parent="." instance=ExtResource("2_nd71p")]
+position = Vector2(104, 104)
+script = ExtResource("2_yclgf")
+
+[node name="Rob" parent="." instance=ExtResource("4_nbdn7")]
+position = Vector2(155, 256)
+collision_layer = 2
+script = ExtResource("1_gya51")
+
+[node name="camera" type="Camera2D" parent="."]
+script = ExtResource("5_g05e6")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_144gy")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 196618, 0, 0)
