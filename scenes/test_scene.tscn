@@ -1,15 +1,10 @@
-[gd_scene format=3 uid="uid://b2i0iap7bx1uy"]
+[gd_scene load_steps=3 format=3 uid="uid://b2i0iap7bx1uy"]
+
+[ext_resource type="PackedScene" uid="uid://bdmc5k6m0k2ew" path="res://characters/rob.tscn" id="1_j8ivh"]
+[ext_resource type="PackedScene" uid="uid://db4euh32djnmt" path="res://characters/bob.tscn" id="2_nd71p"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Rob" type="CharacterBody2D" parent="."]
+[node name="Rob" parent="." instance=ExtResource("1_j8ivh")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rob"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Rob"]
-
-[node name="Bob" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bob"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Bob"]
+[node name="Bob" parent="." instance=ExtResource("2_nd71p")]
