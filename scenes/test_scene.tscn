@@ -22,11 +22,11 @@ sources/0 = SubResource("TileSetAtlasSource_ijk1m")
 [node name="Node2D" type="Node2D"]
 
 [node name="Bob" parent="." instance=ExtResource("2_nd71p")]
-position = Vector2(126, 397)
+position = Vector2(333, 412)
 script = ExtResource("2_yclgf")
 
 [node name="Rob" parent="." instance=ExtResource("4_nbdn7")]
-position = Vector2(956, 415)
+position = Vector2(159, 410)
 script = ExtResource("1_gya51")
 
 [node name="camera" type="Camera2D" parent="."]
