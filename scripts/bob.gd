@@ -23,3 +23,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_bomb_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
