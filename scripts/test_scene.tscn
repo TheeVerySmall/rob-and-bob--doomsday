@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://btfjagalv7s7a"]
+[gd_scene load_steps=10 format=3 uid="uid://b2i0iap7bx1uy"]
 
 [ext_resource type="PackedScene" uid="uid://db4euh32djnmt" path="res://characters/bob.tscn" id="2_nd71p"]
 [ext_resource type="Texture2D" uid="uid://bwmenqyqrbf26" path="res://chigga.svg" id="3_m08py"]
-[ext_resource type="PackedScene" uid="uid://cgjqsnk8t1i6b" path="res://characters/rob.tscn" id="4_nbdn7"]
+[ext_resource type="PackedScene" uid="uid://dd28ppi3mpjwi" path="res://characters/rob.tscn" id="4_nbdn7"]
+[ext_resource type="Script" uid="uid://cbdh6xbdweslb" path="res://scripts/tilemap.gd" id="5_3qnke"]
 [ext_resource type="Script" uid="uid://c6ob3tm5txwfm" path="res://scripts/camera.gd" id="5_g05e6"]
 [ext_resource type="PackedScene" uid="uid://uh7yplis63t1" path="res://prefab/bomb.tscn" id="7_wtsjf"]
 [ext_resource type="PackedScene" uid="uid://dq60i85dscb2s" path="res://obstacles/swinging.tscn" id="8_rnaij"]

@@ -1,9 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq60i85dscb2s"]
+[gd_scene load_steps=7 format=3 uid="uid://dq60i85dscb2s"]
 
 [ext_resource type="Texture2D" uid="uid://dvn5nbupfyf81" path="res://art/draw_chigga.svg" id="1_d2t1y"]
+[ext_resource type="Script" uid="uid://yyntpt10c3o0" path="res://scripts/swinging.gd" id="1_ofkt0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofkt0"]
 size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_pnqpd"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
 
 [sub_resource type="Animation" id="Animation_23npq"]
 resource_name = "swinging"
@@ -22,30 +39,16 @@ tracks/0/keys = {
 "values": [1.22173, -1.22173]
 }
 
-[sub_resource type="Animation" id="Animation_pnqpd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xy1ip"]
 _data = {
 &"RESET": SubResource("Animation_pnqpd"),
 &"swinging": SubResource("Animation_23npq")
 }
 
-[node name="AnimatableBody2D" type="AnimatableBody2D"]
+[node name="swinging" type="AnimatableBody2D"]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("1_ofkt0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -70,7 +73,14 @@ position = Vector2(3, 290)
 shape = SubResource("RectangleShape2D_ofkt0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath(".")
 libraries = {
 &"": SubResource("AnimationLibrary_xy1ip")
 }
-autoplay = "swinging"
+autoplay = "RESET"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[connection signal="child_entered_tree" from="Area2D/CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]

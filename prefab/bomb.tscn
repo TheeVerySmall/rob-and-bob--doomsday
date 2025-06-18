@@ -43,13 +43,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wvjq"]
 size = Vector2(19.3333, 20.6667)
 
 [node name="bomb" type="Area2D"]
+z_index = 1
 script = ExtResource("1_yj1vh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -57,7 +58,7 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_wtsjf")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.611387
+frame_progress = 0.97375
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 7)

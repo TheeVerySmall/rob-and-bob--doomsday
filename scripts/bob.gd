@@ -1,17 +1,31 @@
 #Bob is faster and has int
 
-
+class_name bob
 
 extends CharacterBody2D
 
 @onready var anim : AnimatedSprite2D = $AnimatedSprite2D
 
+var bomb = null
+var facing_left = false
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+var can_pick = false
+var carry_bomb = false
 
 
 func _physics_process(delta):
 	# Add the gravity.
+	if can_pick == true and Input.is_action_just_pressed("P"):
+		if carry_bomb:
+			carry_bomb = false
+		else:
+			carry_bomb = true
+	if carry_bomb == true:
+		bomb.global_position.y = self.global_position.y - 30
+		bomb.global_position.x = self.global_position.x - 2
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:
@@ -19,12 +33,15 @@ func _physics_process(delta):
 			anim.play("run")
 		else:
 			anim.play("idle")
-	
-	if velocity.x < 0:
-		anim.flip_h = true
-	else:
-		anim.flip_h = false
 
+	# Update direction based on movement
+	if velocity.x < -10:
+		facing_left = true
+	elif velocity.x > 10:
+		facing_left = false
+
+	# Flip the animation based on last direction
+	anim.flip_h = facing_left
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -39,7 +56,13 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	print(can_pick)
 
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is bomb:
+		bomb = area
+		can_pick = true
 
-func _on_bomb_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area is bomb:
+		can_pick = false

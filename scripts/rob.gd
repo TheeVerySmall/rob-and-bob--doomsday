@@ -1,6 +1,6 @@
 #Rob jumps higher and has str
 
-
+class_name rob
 
 extends CharacterBody2D
 
