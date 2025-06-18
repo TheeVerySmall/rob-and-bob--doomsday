@@ -59,10 +59,10 @@ func _physics_process(delta):
 	print(can_pick)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area is bomb:
+	if area is Bomb:
 		bomb = area
 		can_pick = true
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area is bomb:
+	if area is Bomb:
 		can_pick = false

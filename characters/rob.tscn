@@ -188,3 +188,6 @@ animation = &"jump"
 position = Vector2(3.75, 1.25)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_eyusd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
