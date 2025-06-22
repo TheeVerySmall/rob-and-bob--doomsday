@@ -168,6 +168,7 @@ animations = [{
 radius = 33.7731
 
 [node name="Bob" type="CharacterBody2D"]
+z_index = 2
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_c7upp")
 metadata/_edit_group_ = true
