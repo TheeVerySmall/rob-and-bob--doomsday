@@ -56,7 +56,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	print(can_pick)
+	#print(can_pick)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Bomb:

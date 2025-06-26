@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://buwfqcoi4s7cg"]
+
+[ext_resource type="Script" uid="uid://bk55gsho0gj14" path="res://swinging_detector.gd" id="1_37s8v"]
+[ext_resource type="Texture2D" uid="uid://ci1pphumxdfao" path="res://art/ligga.png" id="1_ickdp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pnqpd"]
+radius = 19.0263
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_37s8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_pnqpd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.00001, -0.999999)
+scale = Vector2(0.664062, 0.476563)
+texture = ExtResource("1_ickdp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

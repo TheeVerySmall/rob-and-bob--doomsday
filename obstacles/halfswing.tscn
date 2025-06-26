@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dvn5nbupfyf81" path="res://art/draw_chigga.svg" id="1_xy8ga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofkt0"]
-size = Vector2(128, 128)
+size = Vector2(128, 385.867)
 
 [sub_resource type="Animation" id="Animation_pnqpd"]
 length = 2.0
@@ -68,7 +68,7 @@ position = Vector2(3, 290)
 texture = ExtResource("1_xy8ga")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 290)
+position = Vector2(3, 161.067)
 shape = SubResource("RectangleShape2D_ofkt0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://btfjagalv7s7a"]
+[gd_scene load_steps=11 format=3 uid="uid://btfjagalv7s7a"]
 
 [ext_resource type="PackedScene" uid="uid://db4euh32djnmt" path="res://characters/bob.tscn" id="2_nd71p"]
 [ext_resource type="Texture2D" uid="uid://bwmenqyqrbf26" path="res://chigga.svg" id="3_m08py"]
 [ext_resource type="PackedScene" uid="uid://cgjqsnk8t1i6b" path="res://characters/rob.tscn" id="4_nbdn7"]
 [ext_resource type="Script" uid="uid://c6ob3tm5txwfm" path="res://scripts/camera.gd" id="5_g05e6"]
 [ext_resource type="PackedScene" uid="uid://uh7yplis63t1" path="res://prefab/bomb.tscn" id="7_wtsjf"]
+[ext_resource type="PackedScene" uid="uid://buwfqcoi4s7cg" path="res://obstacles/swinging_detector.tscn" id="8_h3xc6"]
 [ext_resource type="PackedScene" uid="uid://dq60i85dscb2s" path="res://obstacles/swinging.tscn" id="8_rnaij"]
 [ext_resource type="PackedScene" uid="uid://ckphvrd1n7s7f" path="res://obstacles/halfswing.tscn" id="9_h3xc6"]
 
@@ -26,7 +27,7 @@ sources/0 = SubResource("TileSetAtlasSource_ijk1m")
 position = Vector2(-18, 452)
 
 [node name="Rob" parent="." instance=ExtResource("4_nbdn7")]
-position = Vector2(-240, 433)
+position = Vector2(-176, 485)
 
 [node name="camera" type="Camera2D" parent="."]
 script = ExtResource("5_g05e6")
@@ -41,7 +42,10 @@ layer_0/tile_data = PackedInt32Array(655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 6
 position = Vector2(-77, 461)
 
 [node name="halfswing" parent="." instance=ExtResource("9_h3xc6")]
-position = Vector2(1303, 266)
+position = Vector2(1845, 303)
 
 [node name="swinging" parent="." instance=ExtResource("8_rnaij")]
 position = Vector2(739, 235)
+
+[node name="Area2D" parent="." instance=ExtResource("8_h3xc6")]
+position = Vector2(1136, 540)

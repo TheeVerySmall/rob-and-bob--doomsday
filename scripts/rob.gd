@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var anim : AnimatedSprite2D = $AnimatedSprite2D
 
 var bomb = null
+var facing_left = false
+
 
 const SPEED = 240.0
 const JUMP_VELOCITY = -480.0
@@ -16,7 +18,7 @@ var carry_bomb = false
 func _physics_process(delta):
 	# Add the gravity.
 	# Add the gravity.
-	if can_pick == true and Input.is_action_just_pressed("P"):
+	if can_pick == true and Input.is_action_just_pressed("B"):
 		if carry_bomb:
 			carry_bomb = false
 		else:
@@ -35,12 +37,12 @@ func _physics_process(delta):
 			anim.play("idle")
 	
 	
-	if velocity.x < 0:
-		anim.flip_h = true
-	else:
-		anim.flip_h = false
+	if velocity.x < -10:
+		facing_left = true
+	elif velocity.x > 10:
+		facing_left = false
 
-
+	anim.flip_h = facing_left
 	# Handle jump.
 	if Input.is_action_just_pressed("W") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
