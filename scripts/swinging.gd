@@ -8,14 +8,13 @@ func _ready():
 	anim.play("swinging")
 
 func _physics_process(delta):
-	print(Globals.swinging_anim_change)
+	pass
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	pass
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	print("done")
 	if Globals.swinging_anim_change == true:
 		anim.play("slowed_swinging")
 	else:

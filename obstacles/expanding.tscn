@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp8ifhhas8eho"]
+
+[ext_resource type="Texture2D" uid="uid://dvn5nbupfyf81" path="res://art/draw_chigga.svg" id="1_15mpj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghans"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_v4mag"]
+resource_name = "expanding"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_v8jsj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_de5fy"]
+_data = {
+&"RESET": SubResource("Animation_v8jsj"),
+&"expanding": SubResource("Animation_v4mag")
+}
+
+[node name="expanding" type="AnimatableBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_15mpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ghans")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_de5fy")
+}
+autoplay = "expanding"
