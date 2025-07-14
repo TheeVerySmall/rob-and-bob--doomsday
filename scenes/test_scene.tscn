@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://buwfqcoi4s7cg" path="res://obstacles/swinging_detector.tscn" id="8_h3xc6"]
 [ext_resource type="PackedScene" uid="uid://dq60i85dscb2s" path="res://obstacles/swinging.tscn" id="8_rnaij"]
 [ext_resource type="PackedScene" uid="uid://ckphvrd1n7s7f" path="res://obstacles/halfswing.tscn" id="9_h3xc6"]
-[ext_resource type="PackedScene" uid="uid://bp8ifhhas8eho" path="res://obstacles/expanding.tscn" id="9_s36qc"]
-[ext_resource type="PackedScene" uid="uid://b7sgv77ufr558" path="res://obstacles/expanding_side.tscn" id="10_s36qc"]
+[ext_resource type="PackedScene" path="res://obstacles/expanding.tscn" id="9_s36qc"]
+[ext_resource type="PackedScene" path="res://obstacles/expanding_side.tscn" id="10_s36qc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijk1m"]
 texture = ExtResource("3_m08py")
