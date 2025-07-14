@@ -9,8 +9,10 @@ extends CharacterBody2D
 var bomb = null
 var facing_left = false
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const START_POSITION = Vector2(-900, 500)
+
+var SPEED = 300.0
+var JUMP_VELOCITY = -400.0
 var can_pick = false
 var carry_bomb = false
 
@@ -23,8 +25,17 @@ func _physics_process(delta):
 		else:
 			carry_bomb = true
 	if carry_bomb == true:
+		JUMP_VELOCITY = -340
+		SPEED = 260
 		bomb.global_position.y = self.global_position.y - 30
 		bomb.global_position.x = self.global_position.x - 2
+	else:
+		JUMP_VELOCITY = -400
+		SPEED = 300
+
+	if position.y > 1000:
+		position = START_POSITION
+
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
