@@ -68,12 +68,14 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Bomb:
-		bomb = body
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is Bomb:
+		bomb = area
 		can_pick = true
 
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body is Bomb:
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area is Bomb:
 		can_pick = false

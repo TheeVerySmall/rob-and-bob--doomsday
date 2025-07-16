@@ -1,7 +1,7 @@
 extends Area2D
 class_name Bomb
-const GRAVITY : float = 10.0
-const max_speed : float = 400.0
+const GRAVITY : float = 8.0
+const max_speed : float = 350.0
 var speed : float = 0:
 	set(value):
 		if value > max_speed:
