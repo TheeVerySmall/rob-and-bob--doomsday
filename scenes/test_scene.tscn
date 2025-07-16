@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://btfjagalv7s7a"]
+[gd_scene load_steps=15 format=3 uid="uid://btfjagalv7s7a"]
 
 [ext_resource type="PackedScene" uid="uid://db4euh32djnmt" path="res://characters/bob.tscn" id="2_nd71p"]
 [ext_resource type="Texture2D" uid="uid://bwmenqyqrbf26" path="res://chigga.svg" id="3_m08py"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://ckphvrd1n7s7f" path="res://obstacles/halfswing.tscn" id="9_h3xc6"]
 [ext_resource type="PackedScene" uid="uid://bp8ifhhas8eho" path="res://obstacles/expanding.tscn" id="9_s36qc"]
 [ext_resource type="PackedScene" uid="uid://b7sgv77ufr558" path="res://obstacles/expanding_side.tscn" id="10_s36qc"]
+[ext_resource type="Script" uid="uid://v7jkwjrid0ln" path="res://scripts/menu_button.gd" id="11_6qxox"]
+[ext_resource type="PackedScene" uid="uid://b0gkpqrnavqbo" path="res://obstacles/expanding_side_detector.tscn" id="12_gthg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijk1m"]
 texture = ExtResource("3_m08py")
@@ -35,6 +37,7 @@ position = Vector2(-908, 493)
 script = ExtResource("5_g05e6")
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(13, 24)
 scale = Vector2(0.5, 0.5)
 tile_set = SubResource("TileSet_144gy")
 format = 2
@@ -56,4 +59,17 @@ position = Vector2(1795, 537)
 position = Vector2(1801, 334)
 
 [node name="expanding_side" parent="." instance=ExtResource("10_s36qc")]
-position = Vector2(480, 648)
+position = Vector2(419, 620)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("11_6qxox")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Menu"
+
+[node name="expanding_side_detector" parent="." instance=ExtResource("12_gthg3")]
+position = Vector2(814, 561)
+
+[connection signal="button_down" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_button_down"]

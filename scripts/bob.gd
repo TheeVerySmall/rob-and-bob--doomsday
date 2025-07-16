@@ -12,7 +12,7 @@ var facing_left = false
 const START_POSITION = Vector2(-900, 500)
 
 var SPEED = 300.0
-var JUMP_VELOCITY = -400.0
+var JUMP_VELOCITY = -374.0
 var can_pick = false
 var carry_bomb = false
 
@@ -30,7 +30,7 @@ func _physics_process(delta):
 		bomb.global_position.y = self.global_position.y - 30
 		bomb.global_position.x = self.global_position.x - 2
 	else:
-		JUMP_VELOCITY = -400
+		JUMP_VELOCITY = -374
 		SPEED = 300
 
 	if position.y > 1000:
