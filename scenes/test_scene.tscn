@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://btfjagalv7s7a"]
+[gd_scene load_steps=15 format=3 uid="uid://btfjagalv7s7a"]
 
 [ext_resource type="PackedScene" uid="uid://db4euh32djnmt" path="res://characters/bob.tscn" id="2_nd71p"]
 [ext_resource type="PackedScene" uid="uid://cgjqsnk8t1i6b" path="res://characters/rob.tscn" id="4_nbdn7"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bp8ifhhas8eho" path="res://obstacles/expanding.tscn" id="9_s36qc"]
 [ext_resource type="PackedScene" uid="uid://b7sgv77ufr558" path="res://obstacles/expanding_side.tscn" id="10_s36qc"]
 [ext_resource type="Texture2D" uid="uid://b8kxewqfgfan3" path="res://Mini Legend Starter Bundle/terrains/forest.png" id="11_6qxox"]
+[ext_resource type="Texture2D" uid="uid://cmuwv63fjjhkl" path="res://Mini Legend Starter Bundle/backgrounds/forest-background.png" id="11_gthg3"]
+[ext_resource type="Texture2D" uid="uid://g3hh222whkpy" path="res://Mini Legend Starter Bundle/backgrounds/forest.png" id="12_ntc4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gthg3"]
 texture = ExtResource("11_6qxox")
@@ -310,3 +312,21 @@ position = Vector2(1801, 334)
 
 [node name="expanding_side" parent="." instance=ExtResource("10_s36qc")]
 position = Vector2(480, 648)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(7, 350)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1440, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1.99995, 77.75)
+scale = Vector2(1444, 648.5)
+texture = ExtResource("11_gthg3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(0.999993, 2.99999)
+texture = ExtResource("12_ntc4i")
