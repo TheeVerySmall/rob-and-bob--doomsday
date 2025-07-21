@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq60i85dscb2s"]
+[gd_scene load_steps=9 format=3 uid="uid://dq60i85dscb2s"]
 
 [ext_resource type="Texture2D" uid="uid://dvn5nbupfyf81" path="res://art/draw_chigga.svg" id="1_d2t1y"]
 [ext_resource type="Script" uid="uid://yyntpt10c3o0" path="res://scripts/swinging.gd" id="1_ofkt0"]
@@ -61,6 +61,9 @@ _data = {
 &"swinging": SubResource("Animation_23npq")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23npq"]
+size = Vector2(133, 392)
+
 [node name="swinging" type="AnimatableBody2D"]
 position = Vector2(1, 0)
 rotation = 12.5664
@@ -96,3 +99,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_xy1ip")
 }
 autoplay = "swinging"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.50033, 161)
+shape = SubResource("RectangleShape2D_23npq")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

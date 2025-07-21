@@ -18,6 +18,8 @@ var carry_bomb = false
 
 
 func _physics_process(delta):
+	if Globals.player_death == true:
+		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 	# Add the gravity.
 	if can_pick == true and Input.is_action_just_pressed("P"):
 		if carry_bomb:
@@ -34,7 +36,7 @@ func _physics_process(delta):
 		SPEED = 300
 
 	if position.y > 1000:
-		position = START_POSITION
+		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 
 
 	if not is_on_floor():
@@ -67,7 +69,6 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	#print(can_pick)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Bomb:

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxupe4yw4rpc"]
+
+[ext_resource type="Script" uid="uid://dicp246ug23gh" path="res://scripts/death_screen.gd" id="1_uyutr"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uyutr")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 430.0
+offset_top = 363.0
+offset_right = 745.0
+offset_bottom = 491.0
+text = "Return to levels"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 429.0
+offset_top = 165.0
+offset_right = 741.0
+offset_bottom = 240.0
+text = "One of y'all threw the game 😭😭🙏🙏"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -17,4 +17,5 @@ func _physics_process(delta):
 		speed += GRAVITY
 		position.y += speed * delta
 
-		
+	if position.y > 1000:
+		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
