@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://m1oc68t7np6n"]
+
+[ext_resource type="Texture2D" uid="uid://cmuwv63fjjhkl" path="res://Mini Legend Starter Bundle/backgrounds/forest-background.png" id="1_cdimw"]
+[ext_resource type="Texture2D" uid="uid://g3hh222whkpy" path="res://Mini Legend Starter Bundle/backgrounds/forest.png" id="2_agck3"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(7, 350)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1440, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1.99995, 77.75)
+scale = Vector2(1444, 648.5)
+texture = ExtResource("1_cdimw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(0.999993, 2.99999)
+texture = ExtResource("2_agck3")
