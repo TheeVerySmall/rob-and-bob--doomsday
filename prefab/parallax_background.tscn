@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://g3hh222whkpy" path="res://Mini Legend Starter Bundle/backgrounds/forest.png" id="2_agck3"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
-scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-position = Vector2(7, 350)
-motion_scale = Vector2(0.4, 0.4)
 motion_mirroring = Vector2(1440, 0)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(1.99995, 77.75)
-scale = Vector2(1444, 648.5)
+position = Vector2(0, -5.53131e-05)
+scale = Vector2(1440, 800)
 texture = ExtResource("1_cdimw")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(0.999993, 2.99999)
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1440, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
 texture = ExtResource("2_agck3")
