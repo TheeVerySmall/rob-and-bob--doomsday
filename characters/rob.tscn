@@ -170,8 +170,6 @@ radius = 33.7731
 [node name="Rob" type="CharacterBody2D" groups=["player"]]
 z_index = 2
 scale = Vector2(0.8, 0.8)
-collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_a8lju")
 metadata/_edit_group_ = true
 
