@@ -11,8 +11,8 @@ var facing_left = false
 
 const START_POSITION = Vector2(-900, 500)
 
-var SPEED = 300.0
-var JUMP_VELOCITY = -374.0
+var SPEED = 324.0
+var JUMP_VELOCITY = -440
 var can_pick = false
 var carry_bomb = false
 
@@ -27,13 +27,13 @@ func _physics_process(delta):
 		else:
 			carry_bomb = true
 	if carry_bomb == true:
-		JUMP_VELOCITY = -340
+		JUMP_VELOCITY = -364
 		SPEED = 260
 		bomb.global_position.y = self.global_position.y - 30
 		bomb.global_position.x = self.global_position.x - 2
 	else:
-		JUMP_VELOCITY = -374
-		SPEED = 300
+		JUMP_VELOCITY = -440
+		SPEED = 324.0
 
 	if position.y > 1000:
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")

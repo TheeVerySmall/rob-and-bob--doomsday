@@ -67,3 +67,8 @@ shape = SubResource("RectangleShape2D_0wvjq")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 25)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
