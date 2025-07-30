@@ -13,12 +13,23 @@ var speed : float = 0:
 
 func _physics_process(delta):
 	if raycast2d.is_colliding() and raycast2d.get_collider() is Ground:
-		bomb_detonate = true
 		speed = 0
+		print("on ground")
 	elif not raycast2d.is_colliding():
-		$Timer.stop()
+		print("not on ground")
 		speed += GRAVITY
 		position.y += speed * delta
+
+	if raycast2d.is_colliding() and raycast2d.get_collider() is Ground:
+		bomb_detonate = true
+	else:
+		$Timer.stop()
+	if bomb_detonate == true and $Timer.is_stopped():
+		bomb_detonate = false
+		$Timer.start()
+	print($Timer.time_left)
+
+
 
 
 
