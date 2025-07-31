@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl23c3r2rcrg"]
+
+[ext_resource type="Script" uid="uid://sno52o6ai1y0" path="res://scripts/player_distance.gd" id="1_1snki"]
+
+[node name="player_distance" type="CanvasLayer"]
+
+[node name="player_distance" type="ProgressBar" parent="."]
+offset_left = 523.0
+offset_top = 165.0
+offset_right = 650.0
+offset_bottom = 192.0
+max_value = 1000.0
+show_percentage = false
+script = ExtResource("1_1snki")

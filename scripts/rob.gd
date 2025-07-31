@@ -17,6 +17,7 @@ var can_pick = false
 var carry_bomb = false
 
 func _physics_process(delta):
+	Globals.x_position_rob = position.x
 	if Globals.player_death == true:
 		# https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-set-deferred
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
