@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl23c3r2rcrg"]
+[gd_scene load_steps=2 format=3 uid="uid://bg81hv7puxfuc"]
 
 [ext_resource type="Script" uid="uid://sno52o6ai1y0" path="res://scripts/player_distance.gd" id="1_1snki"]
 

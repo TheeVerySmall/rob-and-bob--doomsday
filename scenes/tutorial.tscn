@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://m1oc68t7np6n" path="res://prefab/parallax_background.tscn" id="13_qbchm"]
 [ext_resource type="PackedScene" uid="uid://bnpr64vseb6k0" path="res://prefab/sigma.tscn" id="14_gxgfo"]
 [ext_resource type="Script" uid="uid://duhuul7a0k1en" path="res://scripts/tile_map.gd" id="15_sbw1o"]
-[ext_resource type="PackedScene" uid="uid://dl23c3r2rcrg" path="res://prefab/player_distance.tscn" id="16_e13mp"]
+[ext_resource type="PackedScene" uid="uid://bg81hv7puxfuc" path="res://prefab/player_distance.tscn" id="16_e13mp"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wr8iv")
