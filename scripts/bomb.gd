@@ -15,9 +15,7 @@ func _physics_process(delta):
 	Globals.explode = $Timer.time_left
 	if raycast2d.is_colliding() and raycast2d.get_collider() is Ground:
 		speed = 0
-		print("on ground")
 	elif not raycast2d.is_colliding():
-		print("not on ground")
 		speed += GRAVITY
 		position.y += speed * delta
 
@@ -29,7 +27,6 @@ func _physics_process(delta):
 	if bomb_detonate == true and $Timer.is_stopped():
 		bomb_detonate = false
 		$Timer.start()
-	print($Timer.time_left)
 
 
 

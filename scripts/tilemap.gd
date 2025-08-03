@@ -1,2 +1,2 @@
 extends TileMap
-class_name tilemap
+class_name Ground
