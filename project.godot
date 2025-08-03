@@ -19,6 +19,10 @@ config/icon="res://prefab/icon.svg"
 
 Globals="*res://scripts/Globals.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 player=""

@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://m1oc68t7np6n"]
+[gd_scene load_steps=4 format=3 uid="uid://m1oc68t7np6n"]
 
+[ext_resource type="Script" uid="uid://cqyb8kepypin4" path="res://scripts/parallax_background.gd" id="1_agck3"]
 [ext_resource type="Texture2D" uid="uid://cmuwv63fjjhkl" path="res://Mini Legend Starter Bundle/backgrounds/forest-background.png" id="1_cdimw"]
 [ext_resource type="Texture2D" uid="uid://g3hh222whkpy" path="res://Mini Legend Starter Bundle/backgrounds/forest.png" id="2_agck3"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_agck3")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1440, 0)
 metadata/_edit_group_ = true
 
@@ -15,6 +18,7 @@ scale = Vector2(1440, 800)
 texture = ExtResource("1_cdimw")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1440, 0)
 metadata/_edit_group_ = true
 

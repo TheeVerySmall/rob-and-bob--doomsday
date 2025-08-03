@@ -28,3 +28,6 @@ func _process(delta):
 	else:
 		zoom.x = 1
 		zoom.y = 1
+	
+	Globals.xzoom = zoom.x
+	Globals.yzoom = zoom.y
