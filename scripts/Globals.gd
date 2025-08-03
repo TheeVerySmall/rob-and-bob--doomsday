@@ -8,3 +8,7 @@ var explode = 4
 var x_position_bob = 0
 var x_position_rob = 0
 var player_distance = abs(x_position_rob - x_position_bob)
+var bobdeath : bool = false
+var robdeath : = false
+var xzoom : float = 1
+var yzoom : float  = 1

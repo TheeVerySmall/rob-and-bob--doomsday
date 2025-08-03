@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo72gmcru3new"]
+
+[ext_resource type="Script" uid="uid://v7jkwjrid0ln" path="res://scripts/menu_button.gd" id="1_p08ov"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_p08ov")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Menu"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
