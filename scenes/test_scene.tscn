@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=15 format=3 uid="uid://btfjagalv7s7a"]
+=======
+[gd_scene load_steps=16 format=3 uid="uid://btfjagalv7s7a"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=16 format=3 uid="uid://btfjagalv7s7a"]
 >>>>>>> Stashed changes
@@ -36,16 +40,26 @@ sources/0 = SubResource("TileSetAtlasSource_ijk1m")
 [ext_resource type="PackedScene" uid="uid://bnpr64vseb6k0" path="res://prefab/sigma.tscn" id="14_pln1h"]
 [ext_resource type="PackedScene" uid="uid://b7sgv77ufr558" path="res://obstacles/expanding_side.tscn" id="15_hf2sn"]
 [ext_resource type="PackedScene" uid="uid://b0gkpqrnavqbo" path="res://obstacles/expanding_side_detector.tscn" id="16_qq5q4"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Bob" parent="." instance=ExtResource("2_nd71p")]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 position = Vector2(-583, 493)
 
 [node name="Rob" parent="." instance=ExtResource("4_nbdn7")]
 position = Vector2(-908, 493)
+=======
+position = Vector2(-1083, 533)
+
+[node name="Rob" parent="." instance=ExtResource("4_nbdn7")]
+position = Vector2(-1278, 528)
+>>>>>>> Stashed changes
 =======
 position = Vector2(-1083, 533)
 
@@ -68,6 +82,7 @@ layer_0/tile_data = PackedInt32Array(655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 6
 position = Vector2(-809, 490)
 
 [node name="halfswing" parent="." instance=ExtResource("9_h3xc6")]
+<<<<<<< Updated upstream
 position = Vector2(2526, 357)
 
 [node name="swinging" parent="." instance=ExtResource("8_rnaij")]
@@ -105,6 +120,17 @@ position = Vector2(961, 289)
 position = Vector2(1382, 614)
 
 [node name="expanding" parent="." instance=ExtResource("9_s36qc")]
+=======
+position = Vector2(2117, 346)
+
+[node name="swinging" parent="." instance=ExtResource("8_rnaij")]
+position = Vector2(961, 289)
+
+[node name="Area2D" parent="." instance=ExtResource("8_h3xc6")]
+position = Vector2(1382, 614)
+
+[node name="expanding" parent="." instance=ExtResource("9_s36qc")]
+>>>>>>> Stashed changes
 position = Vector2(443, 620)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_6qxox")]
@@ -129,4 +155,7 @@ position = Vector2(219, 540)
 
 [node name="AnimatableBody2D" parent="." instance=ExtResource("15_hf2sn")]
 position = Vector2(87, 552)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -21,6 +21,9 @@ func _physics_process(delta):
 <<<<<<< Updated upstream
 =======
 	Globals.x_position_bob = position.x
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	# Add the gravity.
 	if can_pick == true and Input.is_action_just_pressed("P"):
