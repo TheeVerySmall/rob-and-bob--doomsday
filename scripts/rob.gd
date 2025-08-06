@@ -17,7 +17,11 @@ var can_pick = false
 var carry_bomb = false
 
 func _physics_process(delta):
+<<<<<<< Updated upstream
 	# Add the gravity.
+=======
+	Globals.x_position_rob = position.x
+>>>>>>> Stashed changes
 	# Add the gravity.
 	if can_pick == true and Input.is_action_just_pressed("B"):
 		if carry_bomb:
