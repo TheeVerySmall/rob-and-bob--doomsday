@@ -1,26 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://m1oc68t7np6n"]
+[gd_scene load_steps=6 format=3 uid="uid://m1oc68t7np6n"]
 
 [ext_resource type="Script" uid="uid://cqyb8kepypin4" path="res://scripts/parallax_background.gd" id="1_agck3"]
 [ext_resource type="Texture2D" uid="uid://cmuwv63fjjhkl" path="res://Mini Legend Starter Bundle/backgrounds/forest-background.png" id="1_cdimw"]
 [ext_resource type="Texture2D" uid="uid://g3hh222whkpy" path="res://Mini Legend Starter Bundle/backgrounds/forest.png" id="2_agck3"]
+[ext_resource type="Texture2D" uid="uid://cy4wd1fs810l5" path="res://Mini Legend Starter Bundle/backgrounds/tall-trees.png" id="4_0mbaf"]
+[ext_resource type="Texture2D" uid="uid://ck15ejlmrp3w0" path="res://Mini Legend Starter Bundle/backgrounds/huge-trees.png" id="5_1ycxw"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 script = ExtResource("1_agck3")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+[node name="green background" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1440, 0)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="green background"]
 position = Vector2(0, -5.53131e-05)
-scale = Vector2(1440, 800)
 texture = ExtResource("1_cdimw")
+region_enabled = true
+region_rect = Rect2(0, 0, 1440, 800)
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+[node name="background trees" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1440, 0)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+[node name="Sprite2D" type="Sprite2D" parent="background trees"]
 texture = ExtResource("2_agck3")
+region_enabled = true
+region_rect = Rect2(0, 0, 1440, 800)
+
+[node name="tree1" type="ParallaxLayer" parent="."]
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1440, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="tree1"]
+texture = ExtResource("4_0mbaf")
+region_enabled = true
+region_rect = Rect2(0, 0, 600, 624)
+
+[node name="tree2" type="ParallaxLayer" parent="."]
+position = Vector2(-300, 0)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1440, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="tree2"]
+texture = ExtResource("4_0mbaf")
+region_enabled = true
+region_rect = Rect2(0.027, 623.937, 600, 624)
+
+[node name="tree3" type="ParallaxLayer" parent="."]
+position = Vector2(700, 0)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1440, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="tree3"]
+texture = ExtResource("4_0mbaf")
+region_enabled = true
+region_rect = Rect2(0, 0, 600, 624)
+
+[node name="tree4" type="ParallaxLayer" parent="."]
+position = Vector2(400, 0)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1440, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="tree4"]
+texture = ExtResource("4_0mbaf")
+region_enabled = true
+region_rect = Rect2(0.027, 623.937, 600, 624)
+
+[node name="tree5" type="ParallaxLayer" parent="."]
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1440, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="tree5"]
+texture = ExtResource("5_1ycxw")
+region_enabled = true
+region_rect = Rect2(0, 0, 800, 480)
