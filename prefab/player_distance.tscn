@@ -9,6 +9,6 @@ offset_left = 523.0
 offset_top = 165.0
 offset_right = 650.0
 offset_bottom = 192.0
-max_value = 1000.0
+max_value = 700.0
 show_percentage = false
 script = ExtResource("1_1snki")
