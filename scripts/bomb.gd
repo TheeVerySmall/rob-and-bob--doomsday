@@ -18,13 +18,12 @@ func _physics_process(delta):
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 	if raycast2d.is_colliding() and raycast2d.get_collider() is Ground:
 		print("on ground")
-	elif not raycast2d.is_colliding():
+		Globals.explode -= delta
+	elif not raycast2d.is_colliding() and raycast2d.get_collider() is not Ground:
 		print("not on ground")
 		speed += GRAVITY
 		position.y += speed * delta
-		Globals.explode = 0
-	elif Globals.explode > 0:
-		Globals.explode -= 1 * delta
+		Globals.explode = 4
 
 
 
