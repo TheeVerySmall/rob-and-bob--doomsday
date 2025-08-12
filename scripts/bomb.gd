@@ -12,15 +12,15 @@ var speed : float = 0:
 @onready var raycast2d: RayCast2D = $RayCast2D
 
 func _physics_process(delta):
-	print(Globals.explode)
+	#print(Globals.explode)
 	if Globals.explode < 0:
 		Globals.explode = 4
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 	if raycast2d.is_colliding() and raycast2d.get_collider() is Ground:
-		print("on ground")
+		#print("on ground")
 		Globals.explode -= delta
 	elif not raycast2d.is_colliding() and raycast2d.get_collider() is not Ground:
-		print("not on ground")
+		#print("not on ground")
 		speed += GRAVITY
 		position.y += speed * delta
 		Globals.explode = 4

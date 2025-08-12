@@ -19,7 +19,7 @@ var carry_bomb = false
 
 func _physics_process(delta):
 	Globals.x_position_bob = position.x
-	print(Globals.player_distance)
+	#print(Globals.player_distance)
 	if Globals.player_death == true:
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 	# Add the gravity.
