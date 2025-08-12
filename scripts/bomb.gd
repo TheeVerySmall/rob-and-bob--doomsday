@@ -27,12 +27,7 @@ func _physics_process(delta):
 	if bomb_detonate == true and $Timer.is_stopped():
 		bomb_detonate = false
 		$Timer.start()
-	print($Timer.time_left)
-
-
-
-
-
+		
 	if position.y > 1000:
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 

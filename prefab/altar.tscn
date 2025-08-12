@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbktjgy1ihogx"]
+
+[ext_resource type="Script" uid="uid://co5lt38h6qp0j" path="res://scripts/altar.gd" id="1_1ajin"]
+[ext_resource type="Texture2D" uid="uid://idpi45a77kd2" path="res://Mini Legend Starter Bundle/props/altars.png" id="1_442ni"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajin"]
+atlas = ExtResource("1_442ni")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eavas"]
+atlas = ExtResource("1_442ni")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpyad"]
+atlas = ExtResource("1_442ni")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1cfh"]
+atlas = ExtResource("1_442ni")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnaij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eavas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpyad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1cfh")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_442ni"]
+size = Vector2(65, 55)
+
+[node name="altar" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_1ajin")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rnaij")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, 1.5)
+shape = SubResource("RectangleShape2D_442ni")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

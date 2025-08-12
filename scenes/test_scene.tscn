@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://btfjagalv7s7a"]
+[gd_scene load_steps=13 format=3 uid="uid://btfjagalv7s7a"]
 
 [ext_resource type="PackedScene" uid="uid://db4euh32djnmt" path="res://characters/bob.tscn" id="2_nd71p"]
 [ext_resource type="PackedScene" uid="uid://cgjqsnk8t1i6b" path="res://characters/rob.tscn" id="4_nbdn7"]
 [ext_resource type="Script" uid="uid://c6ob3tm5txwfm" path="res://scripts/camera.gd" id="5_g05e6"]
 [ext_resource type="Texture2D" uid="uid://c4ql4h5rcim25" path="res://Mini Legend Starter Bundle/props/bushes.png" id="8_rnaij"]
 [ext_resource type="PackedScene" uid="uid://bo72gmcru3new" path="res://prefab/canvas_layer.tscn" id="9_6qxox"]
+[ext_resource type="PackedScene" uid="uid://dbktjgy1ihogx" path="res://prefab/altar.tscn" id="9_h3xc6"]
+[ext_resource type="PackedScene" uid="uid://uh7yplis63t1" path="res://prefab/bomb.tscn" id="10_s36qc"]
 [ext_resource type="Script" uid="uid://cbdh6xbdweslb" path="res://scripts/tilemap.gd" id="12_gthg3"]
 [ext_resource type="PackedScene" uid="uid://m1oc68t7np6n" path="res://prefab/parallax_background.tscn" id="13_u0xbq"]
 [ext_resource type="PackedScene" uid="uid://bnpr64vseb6k0" path="res://prefab/sigma.tscn" id="14_pln1h"]
@@ -102,14 +104,13 @@ texture = ExtResource("8_rnaij")
 [sub_resource type="TileSet" id="TileSet_wtsjf"]
 sources/0 = SubResource("TileSetAtlasSource_h3xc6")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rnaij"]
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Bob" parent="." instance=ExtResource("2_nd71p")]
 position = Vector2(-300, 500)
 
 [node name="Rob" parent="." instance=ExtResource("4_nbdn7")]
+modulate = Color(0.203922, 1, 0.541176, 1)
 position = Vector2(-420, 500)
 
 [node name="camera" type="Camera2D" parent="."]
@@ -134,9 +135,14 @@ tile_set = SubResource("TileSet_wtsjf")
 format = 2
 layer_0/tile_data = PackedInt32Array(851967, 65536, 10, 786456, 65536, 10, 851979, 0, 9, 917532, 327680, 1, 917533, 393216, 1, 917548, 0, 4, 917549, 65536, 4, 917543, 0, 4, 917544, 65536, 4, 917516, 0, 5, 917517, 65536, 5, 917518, 0, 4, 917519, 65536, 4, 983039, 0, 4, 917504, 65536, 4, 786494, 0, 10, 852030, 0, 11, 917566, 0, 12, 786495, 65536, 10, 852031, 65536, 11, 917567, 65536, 12, 786497, 393216, 13, 852033, 393216, 14, 917569, 393216, 15, 786498, 458752, 13, 852034, 458752, 14, 917570, 458752, 15, 786490, 393216, 13, 852026, 393216, 14, 917562, 393216, 15, 786491, 458752, 13, 852027, 458752, 14, 917563, 458752, 15, 720905, 327680, 1, 917531, 458752, 1)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="altar" parent="." instance=ExtResource("9_h3xc6")]
+position = Vector2(2769, 547)
+scale = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-sprite_frames = SubResource("SpriteFrames_rnaij")
+[node name="bomb" parent="." instance=ExtResource("10_s36qc")]
+position = Vector2(-128, 427)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[connection signal="area_entered" from="altar" to="altar" method="_on_area_entered"]
+[connection signal="area_exited" from="altar" to="altar" method="_on_area_exited"]
+[connection signal="body_entered" from="altar" to="altar" method="_on_body_entered"]
+[connection signal="body_exited" from="altar" to="altar" method="_on_body_exited"]
