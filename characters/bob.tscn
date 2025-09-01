@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://db4euh32djnmt"]
+[gd_scene load_steps=29 format=3 uid="uid://db4euh32djnmt"]
 
 [ext_resource type="Script" uid="uid://ci2a38j34xjuw" path="res://scripts/bob.gd" id="1_c7upp"]
 [ext_resource type="Texture2D" uid="uid://drm6l5lxo2jrn" path="res://art/spritesheet1.png" id="1_y812g"]
@@ -167,8 +167,22 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_y812g"]
 radius = 33.7731
 
+[sub_resource type="Curve" id="Curve_c7upp"]
+_limits = [-200.0, 200.0, -0.8, 1.85]
+_data = [Vector2(-0.8, 200), 0.0, 0.0, 0, 0, Vector2(-0.51392, 6.74158), 0.0, 0.0, 0, 0, Vector2(-0.1375, 200), 0.0, 0.0, 0, 0, Vector2(0.208807, 200), 0.0, 0.0, 0, 0, Vector2(0.420455, -51.6854), 0.0, 0.0, 0, 0, Vector2(1.56392, 200), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_pgkbb"]
+_data = [Vector2(0.0511364, 0.449438), 0.0, 0.0, 0, 0, Vector2(0.0965909, 0.573034), 0.0, 0.0, 0, 0, Vector2(0.215909, 0.393258), 0.0, 0.0, 0, 0, Vector2(0.267045, 0.213483), 0.0, 0.0, 0, 0, Vector2(0.386364, 0.393258), 0.0, 0.0, 0, 0, Vector2(0.585227, 0.314607), 0.0, 0.0, 0, 0, Vector2(0.761364, 0.685393), 0.0, 0.0, 0, 0, Vector2(0.767045, 0.595506), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[sub_resource type="Curve" id="Curve_yf1fh"]
+_data = [Vector2(0.255682, 0.52809), 0.0, 0.0, 0, 0, Vector2(0.352273, 1), 0.0, 0.0, 0, 0, Vector2(0.579545, 0.516854), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="Bob" type="CharacterBody2D" groups=["player"]]
 z_index = 2
+position = Vector2(0, -12)
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
 collision_mask = 2
@@ -187,6 +201,32 @@ animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_y812g")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-1.25, 13.75)
+lifetime = 0.4
+preprocess = 0.7
+speed_scale = 1.4
+randomness = 1.0
+lifetime_randomness = 1.0
+initial_velocity_min = 0.4
+initial_velocity_max = 1.4
+angular_velocity_min = 0.4
+angular_velocity_max = 1.4
+orbit_velocity_min = 4.0
+orbit_velocity_max = 4.0
+tangential_accel_min = 21.07
+tangential_accel_max = 21.07
+tangential_accel_curve = SubResource("Curve_c7upp")
+damping_min = 20.202
+damping_max = 20.202
+angle_min = 218.2
+angle_max = 218.2
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_pgkbb")
+color = Color(0.675496, 0.77205, 0.898542, 1)
+anim_offset_curve = SubResource("Curve_yf1fh")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

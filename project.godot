@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rob and Bob: Doomsday"
-run/main_scene="uid://btfjagalv7s7a"
+run/main_scene="uid://b4uqohdk5bl12"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://prefab/icon.svg"
 
