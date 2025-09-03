@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbktjgy1ihogx" path="res://prefab/altar.tscn" id="9_h3xc6"]
 [ext_resource type="PackedScene" uid="uid://bg81hv7puxfuc" path="res://prefab/player_distance.tscn" id="10_6qxox"]
 [ext_resource type="PackedScene" uid="uid://uh7yplis63t1" path="res://prefab/bomb.tscn" id="10_s36qc"]
-[ext_resource type="PackedScene" uid="uid://b7sgv77ufr558" path="res://obstacles/expanding_side.tscn" id="11_gthg3"]
+[ext_resource type="PackedScene" uid="uid://d3bsf2kylbto2" path="res://obstacles/expanding_side.tscn" id="11_gthg3"]
 [ext_resource type="PackedScene" uid="uid://b0gkpqrnavqbo" path="res://obstacles/expanding_side_detector.tscn" id="12_ntc4i"]
 [ext_resource type="PackedScene" uid="uid://dq60i85dscb2s" path="res://obstacles/swinging.tscn" id="13_pln1h"]
 [ext_resource type="PackedScene" uid="uid://m1oc68t7np6n" path="res://prefab/parallax_background.tscn" id="13_u0xbq"]
@@ -148,9 +148,6 @@ position = Vector2(-459, 564)
 
 [node name="player_distance" parent="." instance=ExtResource("10_6qxox")]
 
-[node name="AnimatableBody2D" parent="." instance=ExtResource("11_gthg3")]
-position = Vector2(957, 602)
-
 [node name="expanding_side_detector" parent="." instance=ExtResource("12_ntc4i")]
 position = Vector2(1222, 500)
 
@@ -162,6 +159,9 @@ position = Vector2(2586, 578)
 
 [node name="expanding" parent="." instance=ExtResource("15_pln1h")]
 position = Vector2(3118, 370)
+
+[node name="AnimatableBody2D" parent="." instance=ExtResource("11_gthg3")]
+position = Vector2(959, 579)
 
 [connection signal="area_entered" from="altar" to="altar" method="_on_area_entered"]
 [connection signal="area_exited" from="altar" to="altar" method="_on_area_exited"]

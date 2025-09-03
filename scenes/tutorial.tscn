@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dq60i85dscb2s" path="res://obstacles/swinging.tscn" id="7_bl2xa"]
 [ext_resource type="PackedScene" uid="uid://buwfqcoi4s7cg" path="res://obstacles/swinging_detector.tscn" id="8_15kfc"]
 [ext_resource type="PackedScene" uid="uid://bp8ifhhas8eho" path="res://obstacles/expanding.tscn" id="9_7a100"]
-[ext_resource type="PackedScene" uid="uid://b7sgv77ufr558" path="res://obstacles/expanding_side.tscn" id="10_feaue"]
+[ext_resource type="PackedScene" uid="uid://b7sgv77ufr558" path="res://obstacles/expanding_vert.tscn" id="10_feaue"]
 [ext_resource type="Script" uid="uid://v7jkwjrid0ln" path="res://scripts/menu_button.gd" id="11_210s6"]
 [ext_resource type="PackedScene" uid="uid://b0gkpqrnavqbo" path="res://obstacles/expanding_side_detector.tscn" id="12_5qvs7"]
 [ext_resource type="PackedScene" uid="uid://m1oc68t7np6n" path="res://prefab/parallax_background.tscn" id="13_qbchm"]
