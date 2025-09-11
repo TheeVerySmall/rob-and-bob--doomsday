@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqsw68m7xla4p"]
+
+[ext_resource type="Script" uid="uid://dicp246ug23gh" path="res://scripts/death_screen.gd" id="1_wv5lq"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wv5lq")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 430.0
+offset_top = 363.0
+offset_right = 745.0
+offset_bottom = 491.0
+text = "Return to levels"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 429.0
+offset_top = 165.0
+offset_right = 741.0
+offset_bottom = 240.0
+text = "Congrats fellas, you two must be the goated duo 🤑🤑🤑🤑"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

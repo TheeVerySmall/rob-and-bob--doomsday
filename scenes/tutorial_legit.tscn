@@ -183,11 +183,18 @@ text = "Green can jump high and blue and run fast but carrying bomb will nerf bo
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 offset_left = 436.0
-offset_top = 460.0
+offset_top = 411.0
 offset_right = 619.0
 offset_bottom = 531.0
-text = "Standing on these lil for a bit dudes will you navigate obstacles
+text = "Standing on these lil for a bit dudes will you navigate obstacles (only one person at a time)
 "
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+offset_left = 1262.0
+offset_top = 420.0
+offset_right = 1445.0
+offset_bottom = 516.0
+text = "CONTINUE ONWARDS TO THE ALTAR (Both players and the bomb must be inside to win)"
 
 [node name="AnimatableBody2D" parent="." instance=ExtResource("11_ol5rq")]
 position = Vector2(844, 586)

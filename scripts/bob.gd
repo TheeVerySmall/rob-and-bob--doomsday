@@ -43,6 +43,7 @@ func _physics_process(delta):
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		print(velocity.y)
 	else:
 		if abs(velocity.x) > 10:
 			anim.play("run")

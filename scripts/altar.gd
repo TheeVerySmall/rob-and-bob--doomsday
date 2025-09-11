@@ -21,7 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 func check_win():
 	if Bob_here and Rob_here and Bomb_here:
-		get_tree().change_scene_to_file("res://scenes/level_select.tscn")
+		get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
 		
 
 
