@@ -38,4 +38,5 @@ text = "Back"
 [connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="VBoxContainer/Button3" to="." method="_on_button_3_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button4" to="." method="_on_button_4_button_down"]
 [connection signal="button_down" from="VBoxContainer/Back" to="." method="_on_back_button_down"]

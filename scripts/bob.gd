@@ -30,7 +30,7 @@ func _physics_process(delta):
 			carry_bomb = true
 	if carry_bomb == true:
 		JUMP_VELOCITY = -364
-		SPEED = 260
+		SPEED = 244
 		bomb.global_position.y = self.global_position.y - 30
 		bomb.global_position.x = self.global_position.x - 2
 	else:
