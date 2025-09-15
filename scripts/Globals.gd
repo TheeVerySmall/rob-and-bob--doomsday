@@ -14,3 +14,6 @@ var bobfinish : bool = false
 var robfinish : bool = false
 var xzoom : float = 1
 var yzoom : float  = 1
+var level_1 : bool = true
+var level_2 : bool = false
+var level_3 : bool = false

@@ -13,11 +13,13 @@ offset_right = 1153.0
 offset_bottom = 649.0
 
 [node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 0
 offset_right = 1150.0
 offset_bottom = 647.0
 
 [node name="LevelButton" parent="Control/GridContainer" instance=ExtResource("2_p0wlc")]
 layout_mode = 2
+ignore_texture_size = true
 
 [node name="Back" type="Button" parent="Control/GridContainer"]
 layout_mode = 2

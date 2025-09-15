@@ -3,8 +3,7 @@ extends TextureButton
 
 signal level_selected
 
-@export var level_num = 1
-
+@export var level_num: int = 1
 @export var locked: bool = true:
 	set(value):
 		locked = value
