@@ -23,6 +23,8 @@ position = Vector2(-420, 500)
 script = ExtResource("5_g05e6")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_6qxox")]
+scale = Vector2(7, 7)
+transform = Transform2D(7, 0, 0, 7, 0, 0)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("13_u0xbq")]
 offset = Vector2(500, 350)
@@ -36,7 +38,7 @@ layer_0/tile_data = PackedInt32Array(3276695, 0, 2, 3342231, 0, 3, 3276696, 6553
 [node name="decorations" parent="." instance=ExtResource("7_h3xc6")]
 
 [node name="altar" parent="." instance=ExtResource("9_h3xc6")]
-position = Vector2(2769, 547)
+position = Vector2(876, 537)
 scale = Vector2(2, 2)
 
 [node name="bomb" parent="." instance=ExtResource("10_s36qc")]

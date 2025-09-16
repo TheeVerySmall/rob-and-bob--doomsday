@@ -1,18 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4uqohdk5bl12"]
+[gd_scene load_steps=8 format=3 uid="uid://b4uqohdk5bl12"]
 
 [ext_resource type="Script" uid="uid://tvqnplvid31p" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://m1oc68t7np6n" path="res://prefab/parallax_background.tscn" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c7wp71vuo0rkm" path="res://art/Rob-and-Bob-DOOMSDAY-9-9-2025.png" id="2_rtw2f"]
 [ext_resource type="Script" uid="uid://c4vlho0qp350m" path="res://scripts/menubackgroundtrees.gd" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://bb6jpwngoamtq" path="res://art/menuscreen.PNG" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://drm6l5lxo2jrn" path="res://art/spritesheet1.png" id="3_tbmy8"]
 [ext_resource type="Script" uid="uid://yxtgob5xfbw2" path="res://scripts/menuparallax.gd" id="3_wu84c"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l6cm7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 457.0
+offset_left = 450.0
 offset_top = 325.0
-offset_right = 769.0
+offset_right = 762.0
 offset_bottom = 527.0
 
 [node name="start" type="Button" parent="VBoxContainer"]
@@ -30,6 +32,25 @@ text = "Credits"
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(605.081, 170.5)
+scale = Vector2(0.835135, 0.835135)
+texture = ExtResource("2_rtw2f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(369, 514)
+scale = Vector2(1.22354, 1.22354)
+texture = ExtResource("3_tbmy8")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 67.5)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(368, 447)
+scale = Vector2(1.224, 1.224)
+texture = ExtResource("3_tbmy8")
+region_enabled = true
+region_rect = Rect2(0, 0, 70, 67.5)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_ekxnf")]
 offset = Vector2(0, 300)
