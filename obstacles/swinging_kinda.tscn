@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://2jjugga66yrj"]
+[gd_scene load_steps=18 format=3 uid="uid://2jjugga66yrj"]
 
 [ext_resource type="Script" uid="uid://yyntpt10c3o0" path="res://scripts/swinging.gd" id="1_udy7n"]
 [ext_resource type="Texture2D" uid="uid://dvn5nbupfyf81" path="res://art/draw_chigga.svg" id="2_uwkau"]
+[ext_resource type="Texture2D" uid="uid://bbpp5hfle3jjn" path="res://art/Slime-Sheet.png" id="3_ywpaw"]
+[ext_resource type="Texture2D" uid="uid://jds6jsdlvc6" path="res://Mini Legend Starter Bundle/characters/spirit-large.png" id="4_nxa2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofkt0"]
 size = Vector2(128, 129)
@@ -64,6 +66,56 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23npq"]
 size = Vector2(133, 132)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_io8bk"]
+atlas = ExtResource("3_ywpaw")
+region = Rect2(0, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vhu4"]
+atlas = ExtResource("3_ywpaw")
+region = Rect2(52, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gejf4"]
+atlas = ExtResource("3_ywpaw")
+region = Rect2(104, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g5qk"]
+atlas = ExtResource("3_ywpaw")
+region = Rect2(156, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfrm2"]
+atlas = ExtResource("3_ywpaw")
+region = Rect2(312, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21qk3"]
+atlas = ExtResource("3_ywpaw")
+region = Rect2(364, 110, 52, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g5e2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io8bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vhu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gejf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g5qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfrm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21qk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
 [node name="swinging" type="AnimatableBody2D"]
 position = Vector2(1, 0)
 rotation = 12.5664
@@ -71,12 +123,8 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_udy7n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(4.17262, 98.0123)
-scale = Vector2(0.0250922, 2.03144)
-texture = ExtResource("2_uwkau")
-
 [node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.466667)
 position = Vector2(3, 290)
 texture = ExtResource("2_uwkau")
 
@@ -96,6 +144,19 @@ autoplay = "swinging"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(3.50033, 291)
 shape = SubResource("RectangleShape2D_23npq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.66557, 243)
+scale = Vector2(2.63041, 4.07273)
+sprite_frames = SubResource("SpriteFrames_g5e2b")
+autoplay = "default"
+frame_progress = 0.715964
+
+[node name="Spirit-large" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(6.00351, 119.873)
+scale = Vector2(0.502879, 9.88876)
+texture = ExtResource("4_nxa2c")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

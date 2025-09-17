@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp8ifhhas8eho"]
+[gd_scene load_steps=13 format=3 uid="uid://bp8ifhhas8eho"]
 
-[ext_resource type="Texture2D" uid="uid://dvn5nbupfyf81" path="res://art/draw_chigga.svg" id="1_15mpj"]
+[ext_resource type="Texture2D" uid="uid://bbpp5hfle3jjn" path="res://art/Slime-Sheet.png" id="2_ghans"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghans"]
 size = Vector2(128, 128)
@@ -43,13 +43,60 @@ _data = {
 &"expanding": SubResource("Animation_v4mag")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_io8bk"]
+atlas = ExtResource("2_ghans")
+region = Rect2(0, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vhu4"]
+atlas = ExtResource("2_ghans")
+region = Rect2(52, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gejf4"]
+atlas = ExtResource("2_ghans")
+region = Rect2(104, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g5qk"]
+atlas = ExtResource("2_ghans")
+region = Rect2(156, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfrm2"]
+atlas = ExtResource("2_ghans")
+region = Rect2(312, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21qk3"]
+atlas = ExtResource("2_ghans")
+region = Rect2(364, 110, 52, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4mag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io8bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vhu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gejf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g5qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfrm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21qk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
 [node name="expanding" type="AnimatableBody2D"]
 scale = Vector2(0.5, 0.5)
 collision_layer = 3
 collision_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_15mpj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ghans")
@@ -59,3 +106,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_de5fy")
 }
 autoplay = "expanding"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -48)
+scale = Vector2(2.53846, 4.07273)
+sprite_frames = SubResource("SpriteFrames_v4mag")
+autoplay = "default"
+frame_progress = 0.360763

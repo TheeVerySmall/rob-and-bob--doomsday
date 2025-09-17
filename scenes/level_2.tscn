@@ -144,11 +144,12 @@ position = Vector2(3431, 304)
 scale = Vector2(2, 2)
 
 [node name="bomb" parent="." instance=ExtResource("9_k6a82")]
-position = Vector2(1725, 311)
+position = Vector2(-620, 538)
 
 [node name="player_distance" parent="." instance=ExtResource("10_1sb0y")]
 
 [node name="expanding" parent="." instance=ExtResource("13_g2hoc")]
+z_index = -1
 position = Vector2(-795, 430)
 
 [node name="halfswing" parent="." instance=ExtResource("16_igmy8")]

@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckphvrd1n7s7f"]
+[gd_scene load_steps=15 format=3 uid="uid://ckphvrd1n7s7f"]
 
 [ext_resource type="Texture2D" uid="uid://dvn5nbupfyf81" path="res://art/draw_chigga.svg" id="1_xy8ga"]
+[ext_resource type="Texture2D" uid="uid://bbpp5hfle3jjn" path="res://art/Slime-Sheet.png" id="2_nldax"]
+[ext_resource type="Texture2D" uid="uid://jds6jsdlvc6" path="res://Mini Legend Starter Bundle/characters/spirit-large.png" id="3_yy1ae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofkt0"]
 size = Vector2(128, 128.706)
@@ -44,21 +46,68 @@ _data = {
 &"swinging": SubResource("Animation_23npq")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_io8bk"]
+atlas = ExtResource("2_nldax")
+region = Rect2(0, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vhu4"]
+atlas = ExtResource("2_nldax")
+region = Rect2(52, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gejf4"]
+atlas = ExtResource("2_nldax")
+region = Rect2(104, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g5qk"]
+atlas = ExtResource("2_nldax")
+region = Rect2(156, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfrm2"]
+atlas = ExtResource("2_nldax")
+region = Rect2(312, 110, 52, 55)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21qk3"]
+atlas = ExtResource("2_nldax")
+region = Rect2(364, 110, 52, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_me2of"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io8bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vhu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gejf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g5qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfrm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21qk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
 [node name="halfswing" type="AnimatableBody2D"]
 rotation = 1.22173
 collision_layer = 3
 collision_mask = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.29897, 96.9187)
-scale = Vector2(0.021423, 2.01435)
-texture = ExtResource("1_xy8ga")
-
 [node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.317647)
 position = Vector2(3, 290)
 texture = ExtResource("1_xy8ga")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(1, 1, 1, 0.415686)
 position = Vector2(3, 289.648)
 shape = SubResource("RectangleShape2D_ofkt0")
 
@@ -67,3 +116,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_xy1ip")
 }
 autoplay = "RESET"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.66557, 243)
+scale = Vector2(2.63041, 4.07273)
+sprite_frames = SubResource("SpriteFrames_me2of")
+autoplay = "default"
+
+[node name="Spirit-large" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(6.00351, 119.873)
+scale = Vector2(0.502879, 9.88876)
+texture = ExtResource("3_yy1ae")
