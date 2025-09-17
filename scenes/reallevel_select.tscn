@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://buw3xhwtpbe85"]
+[gd_scene load_steps=8 format=3 uid="uid://buw3xhwtpbe85"]
 
 [ext_resource type="Script" uid="uid://eytrngdi7pvg" path="res://scripts/reallevel_select.gd" id="1_m3iha"]
 [ext_resource type="Texture2D" uid="uid://cu36ppd03bknv" path="res://art/Backgroundforest.png" id="2_m3iha"]
 [ext_resource type="PackedScene" uid="uid://w5ukuqclfrto" path="res://prefab/level_button.tscn" id="2_syhhn"]
 [ext_resource type="Script" uid="uid://cqyb8kepypin4" path="res://scripts/parallax_background.gd" id="5_m3iha"]
 [ext_resource type="Texture2D" uid="uid://bb6jpwngoamtq" path="res://art/menuscreen.PNG" id="6_duwfh"]
+[ext_resource type="Texture2D" uid="uid://hrlo3dv3wqv8" path="res://Menu Buttons/Large Buttons/Large Buttons/Back Button.png" id="6_m3iha"]
+[ext_resource type="Texture2D" uid="uid://l2pim5525r3p" path="res://Menu Buttons/Large Buttons/Colored Large Buttons/Back  col_Button.png" id="7_5vdq4"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -108,6 +110,33 @@ motion_mirroring = Vector2(600, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("6_duwfh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 43.0
+offset_right = 806.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 67
+text = "LEVEL SELECT"
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 153.0
+offset_bottom = 53.0
+texture_normal = ExtResource("6_m3iha")
+texture_pressed = ExtResource("6_m3iha")
+texture_hover = ExtResource("7_5vdq4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="GridContainer/GridContainer/LevelButton" to="." method="_on_level_button_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer/LevelButton2" to="." method="_on_level_button_2_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer/LevelButton3" to="." method="_on_level_button_3_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer/LevelButton4" to="." method="_on_level_button_4_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 
 [editable path="GridContainer/GridContainer/LevelButton"]
 [editable path="GridContainer/GridContainer/LevelButton2"]

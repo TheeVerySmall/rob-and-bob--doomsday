@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnv6gdh3m01ua"]
+
+[ext_resource type="Script" uid="uid://yyntpt10c3o0" path="res://scripts/swinging.gd" id="1_s5ew0"]
+[ext_resource type="Texture2D" uid="uid://d0m758vjdhdlv" path="res://art/Swinging.png" id="2_wq7uv"]
+[ext_resource type="Texture2D" uid="uid://db3oyry2wlur8" path="res://art/Swinging_top.png" id="3_m0d2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofkt0"]
+size = Vector2(128, 170)
+
+[sub_resource type="Animation" id="Animation_pnqpd"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [12.5664]
+}
+
+[sub_resource type="Animation" id="Animation_ofkt0"]
+resource_name = "slowed_swinging"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_23npq"]
+resource_name = "swinging"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xy1ip"]
+_data = {
+&"RESET": SubResource("Animation_pnqpd"),
+&"slowed_swinging": SubResource("Animation_ofkt0"),
+&"swinging": SubResource("Animation_23npq")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23npq"]
+size = Vector2(133, 172.001)
+
+[node name="swinging" type="AnimatableBody2D"]
+position = Vector2(1, 0)
+rotation = 12.5664
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_s5ew0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.82533, 243.099)
+scale = Vector2(0.428637, 0.474097)
+texture = ExtResource("2_wq7uv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 269)
+shape = SubResource("RectangleShape2D_ofkt0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath(".")
+libraries = {
+&"": SubResource("AnimationLibrary_xy1ip")
+}
+autoplay = "swinging"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.50033, 271)
+shape = SubResource("RectangleShape2D_23npq")
+
+[node name="SwingingTop" type="Sprite2D" parent="."]
+position = Vector2(7, -0.000203133)
+scale = Vector2(0.0949751, 0.0993497)
+texture = ExtResource("3_m0d2t")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

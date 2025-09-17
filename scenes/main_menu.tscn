@@ -21,10 +21,6 @@ offset_bottom = 527.0
 layout_mode = 2
 text = "Start"
 
-[node name="tutorial" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Tutorial"
-
 [node name="credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Credits"
@@ -72,6 +68,5 @@ motion_mirroring = Vector2(600, 0)
 texture = ExtResource("3_bqqt6")
 
 [connection signal="button_down" from="VBoxContainer/start" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="VBoxContainer/tutorial" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="VBoxContainer/credits" to="." method="_on_button_3_button_down"]
 [connection signal="button_down" from="VBoxContainer/quit" to="." method="_on_button_4_button_down"]

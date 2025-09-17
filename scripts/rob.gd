@@ -19,15 +19,14 @@ var carry_bomb = false
 func _physics_process(delta):
 	Globals.x_position_rob = position.x
 	if Globals.player_death == true:
-		# https://docs.godotengine.org/en/stable/classes/class_object.html#class-object-method-set-deferred
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
-	# Add the gravity.
 	if can_pick == true and Input.is_action_just_pressed("B"):
 		if carry_bomb:
 			carry_bomb = false
 		else:
 			carry_bomb = true
 	if carry_bomb == true:
+		Globals.start = true
 		JUMP_VELOCITY = -504
 		SPEED = 200
 		bomb.global_position.y = self.global_position.y - 30

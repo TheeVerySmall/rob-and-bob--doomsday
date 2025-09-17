@@ -19,7 +19,6 @@ var carry_bomb = false
 
 func _physics_process(delta):
 	Globals.x_position_bob = position.x
-	#print(Globals.player_distance)
 	if Globals.player_death == true:
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 	# Add the gravity.
@@ -29,6 +28,7 @@ func _physics_process(delta):
 		else:
 			carry_bomb = true
 	if carry_bomb == true:
+		Globals.start = Globals.start + 1
 		JUMP_VELOCITY = -364
 		SPEED = 244
 		bomb.global_position.y = self.global_position.y - 30
@@ -43,7 +43,6 @@ func _physics_process(delta):
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		print(velocity.y)
 	else:
 		if abs(velocity.x) > 10:
 			anim.play("run")
