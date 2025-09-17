@@ -30,7 +30,7 @@ func _physics_process(delta):
 			carry_bomb = true
 	if carry_bomb == true:
 		JUMP_VELOCITY = -364
-		SPEED = 260
+		SPEED = 244
 		bomb.global_position.y = self.global_position.y - 30
 		bomb.global_position.x = self.global_position.x - 2
 	else:
@@ -43,6 +43,7 @@ func _physics_process(delta):
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		print(velocity.y)
 	else:
 		if abs(velocity.x) > 10:
 			anim.play("run")

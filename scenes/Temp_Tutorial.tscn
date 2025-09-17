@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn2bk5262ck02"]
+
+[ext_resource type="Script" uid="uid://wn7l8g0j2t07" path="res://scripts/temp_tutorial.gd" id="1_p80y1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_p80y1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 404.0
+offset_top = 240.0
+offset_right = 781.0
+offset_bottom = 356.0
+text = " Player 1: WASD to move and B to pickup the bomb
+
+Player 2: Arrow keys to move and P to pickup the bomb"
+
+[node name="Button" type="Button" parent="."]
+offset_right = 134.0
+offset_bottom = 42.0
+text = "Return"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
