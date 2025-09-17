@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://buw3xhwtpbe85"]
+
+[ext_resource type="Script" uid="uid://dmkbmir5a7327" path="res://scripts/level_select.gd" id="1_hnslt"]
+[ext_resource type="PackedScene" uid="uid://w5ukuqclfrto" path="res://prefab/level_button.tscn" id="2_syhhn"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hnslt")
+
+[node name="GridContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LevelButton" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
