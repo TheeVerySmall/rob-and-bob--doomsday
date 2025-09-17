@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://w5ukuqclfrto"]
 
-[ext_resource type="Texture2D" uid="uid://dl6ephsiclq43" path="res://Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Level/Button/Dummy.png" id="1_xiu3h"]
-[ext_resource type="Texture2D" uid="uid://b6nf7003o4tfo" path="res://Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Level/Button/Locked.png" id="2_rqvy7"]
+[ext_resource type="Texture2D" uid="uid://biowkb1owkyvt" path="res://Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Level/Button/Dummy.png" id="1_xiu3h"]
 [ext_resource type="Texture2D" uid="uid://bimqlkqqx6d6u" path="res://Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Level/Button/Dummydark.png" id="2_yf2yq"]
 [ext_resource type="Texture2D" uid="uid://2dse8bal1dhs" path="res://Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Level/Button/Dummylight.png" id="3_e0tid"]
+[ext_resource type="Texture2D" uid="uid://bfin2nhylwf34" path="res://Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Level/Button/lock.png" id="4_yf2yq"]
 
 [node name="LevelButton" type="TextureButton"]
 custom_minimum_size = Vector2(50, 50)
@@ -12,7 +12,7 @@ offset_bottom = 105.0
 texture_normal = ExtResource("1_xiu3h")
 texture_pressed = ExtResource("2_yf2yq")
 texture_hover = ExtResource("3_e0tid")
-texture_disabled = ExtResource("2_rqvy7")
+texture_disabled = ExtResource("4_yf2yq")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]

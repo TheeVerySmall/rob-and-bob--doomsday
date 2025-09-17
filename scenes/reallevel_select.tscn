@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://buw3xhwtpbe85"]
+[gd_scene load_steps=6 format=3 uid="uid://buw3xhwtpbe85"]
 
-[ext_resource type="Script" uid="uid://dmkbmir5a7327" path="res://scripts/level_select.gd" id="1_hnslt"]
+[ext_resource type="Script" uid="uid://eytrngdi7pvg" path="res://scripts/reallevel_select.gd" id="1_m3iha"]
 [ext_resource type="Texture2D" uid="uid://cu36ppd03bknv" path="res://art/Backgroundforest.png" id="2_m3iha"]
 [ext_resource type="PackedScene" uid="uid://w5ukuqclfrto" path="res://prefab/level_button.tscn" id="2_syhhn"]
-[ext_resource type="Texture2D" uid="uid://bfin2nhylwf34" path="res://Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Level/Button/lock.png" id="3_syhhn"]
 [ext_resource type="Script" uid="uid://cqyb8kepypin4" path="res://scripts/parallax_background.gd" id="5_m3iha"]
 [ext_resource type="Texture2D" uid="uid://bb6jpwngoamtq" path="res://art/menuscreen.PNG" id="6_duwfh"]
 
@@ -14,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hnslt")
+script = ExtResource("1_m3iha")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -38,21 +37,25 @@ columns = 4
 
 [node name="LevelButton" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
 layout_mode = 2
+texture_disabled = null
 
 [node name="Label" parent="GridContainer/GridContainer/LevelButton" index="0"]
 text = "1"
 
 [node name="LevelButton2" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
 layout_mode = 2
+texture_disabled = null
 
 [node name="LevelButton3" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
 layout_mode = 2
+texture_disabled = null
 
 [node name="Label" parent="GridContainer/GridContainer/LevelButton3" index="0"]
 text = "3"
 
 [node name="LevelButton4" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
 layout_mode = 2
+texture_disabled = null
 
 [node name="Label" parent="GridContainer/GridContainer/LevelButton4" index="0"]
 text = "4"
@@ -60,7 +63,7 @@ text = "4"
 [node name="LevelButton5" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
 layout_mode = 2
 disabled = true
-texture_disabled = ExtResource("3_syhhn")
+texture_normal = null
 
 [node name="Label" parent="GridContainer/GridContainer/LevelButton5" index="0"]
 visible = false
@@ -69,7 +72,7 @@ text = "5"
 [node name="LevelButton6" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
 layout_mode = 2
 disabled = true
-texture_disabled = ExtResource("3_syhhn")
+texture_normal = null
 
 [node name="Label" parent="GridContainer/GridContainer/LevelButton6" index="0"]
 visible = false
@@ -78,7 +81,7 @@ text = "6"
 [node name="LevelButton7" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
 layout_mode = 2
 disabled = true
-texture_disabled = ExtResource("3_syhhn")
+texture_normal = null
 
 [node name="Label" parent="GridContainer/GridContainer/LevelButton7" index="0"]
 visible = false
@@ -87,7 +90,7 @@ text = "7"
 [node name="LevelButton8" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
 layout_mode = 2
 disabled = true
-texture_disabled = ExtResource("3_syhhn")
+texture_normal = null
 
 [node name="Label" parent="GridContainer/GridContainer/LevelButton8" index="0"]
 visible = false
@@ -101,7 +104,7 @@ script = ExtResource("5_m3iha")
 z_index = 1
 position = Vector2(0, 400)
 scale = Vector2(2, 2)
-motion_mirroring = Vector2(1214, 0)
+motion_mirroring = Vector2(600, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("6_duwfh")
