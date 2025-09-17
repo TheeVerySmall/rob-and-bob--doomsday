@@ -109,7 +109,7 @@ texture = ExtResource("7_sx8yt")
 [sub_resource type="TileSet" id="TileSet_wtsjf"]
 sources/0 = SubResource("TileSetAtlasSource_h3xc6")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="Bob" parent="." instance=ExtResource("1_5xqnf")]
 position = Vector2(-600, 564)

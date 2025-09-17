@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bnpr64vseb6k0" path="res://prefab/sigma.tscn" id="14_gxgfo"]
 [ext_resource type="PackedScene" uid="uid://bg81hv7puxfuc" path="res://prefab/player_distance.tscn" id="16_e13mp"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_wr8iv")
 
 [node name="Bob" parent="." instance=ExtResource("2_e13mp")]
