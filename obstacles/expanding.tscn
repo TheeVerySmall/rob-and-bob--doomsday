@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp8ifhhas8eho"]
+[gd_scene load_steps=14 format=3 uid="uid://bp8ifhhas8eho"]
 
 [ext_resource type="Texture2D" uid="uid://bbpp5hfle3jjn" path="res://art/Slime-Sheet.png" id="2_ghans"]
+[ext_resource type="Texture2D" uid="uid://bwmenqyqrbf26" path="res://chigga.svg" id="2_v4mag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghans"]
 size = Vector2(128, 128)
@@ -113,3 +114,8 @@ scale = Vector2(2.53846, 4.07273)
 sprite_frames = SubResource("SpriteFrames_v4mag")
 autoplay = "default"
 frame_progress = 0.360763
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.309804)
+z_index = -1
+texture = ExtResource("2_v4mag")
