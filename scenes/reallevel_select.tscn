@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://buw3xhwtpbe85"]
+
+[ext_resource type="Script" uid="uid://dmkbmir5a7327" path="res://scripts/level_select.gd" id="1_hnslt"]
+[ext_resource type="Texture2D" uid="uid://cu36ppd03bknv" path="res://art/Backgroundforest.png" id="2_m3iha"]
+[ext_resource type="PackedScene" uid="uid://w5ukuqclfrto" path="res://prefab/level_button.tscn" id="2_syhhn"]
+[ext_resource type="Texture2D" uid="uid://bfin2nhylwf34" path="res://Prinbles_Asset_Robin (v 1.1) (9_5_2023)/png/Level/Button/lock.png" id="3_syhhn"]
+[ext_resource type="Script" uid="uid://cqyb8kepypin4" path="res://scripts/parallax_background.gd" id="5_m3iha"]
+[ext_resource type="Texture2D" uid="uid://bb6jpwngoamtq" path="res://art/menuscreen.PNG" id="6_duwfh"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hnslt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+texture = ExtResource("2_m3iha")
+
+[node name="GridContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 309.0
+offset_top = 184.0
+offset_right = 838.0
+offset_bottom = 456.0
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 40
+columns = 4
+
+[node name="LevelButton" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
+
+[node name="Label" parent="GridContainer/GridContainer/LevelButton" index="0"]
+text = "1"
+
+[node name="LevelButton2" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
+
+[node name="LevelButton3" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
+
+[node name="Label" parent="GridContainer/GridContainer/LevelButton3" index="0"]
+text = "3"
+
+[node name="LevelButton4" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
+
+[node name="Label" parent="GridContainer/GridContainer/LevelButton4" index="0"]
+text = "4"
+
+[node name="LevelButton5" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
+disabled = true
+texture_disabled = ExtResource("3_syhhn")
+
+[node name="Label" parent="GridContainer/GridContainer/LevelButton5" index="0"]
+visible = false
+text = "5"
+
+[node name="LevelButton6" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
+disabled = true
+texture_disabled = ExtResource("3_syhhn")
+
+[node name="Label" parent="GridContainer/GridContainer/LevelButton6" index="0"]
+visible = false
+text = "6"
+
+[node name="LevelButton7" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
+disabled = true
+texture_disabled = ExtResource("3_syhhn")
+
+[node name="Label" parent="GridContainer/GridContainer/LevelButton7" index="0"]
+visible = false
+text = "7"
+
+[node name="LevelButton8" parent="GridContainer/GridContainer" instance=ExtResource("2_syhhn")]
+layout_mode = 2
+disabled = true
+texture_disabled = ExtResource("3_syhhn")
+
+[node name="Label" parent="GridContainer/GridContainer/LevelButton8" index="0"]
+visible = false
+text = "8"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
+script = ExtResource("5_m3iha")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = 1
+position = Vector2(0, 400)
+scale = Vector2(2, 2)
+motion_mirroring = Vector2(1214, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("6_duwfh")
+
+[editable path="GridContainer/GridContainer/LevelButton"]
+[editable path="GridContainer/GridContainer/LevelButton2"]
+[editable path="GridContainer/GridContainer/LevelButton3"]
+[editable path="GridContainer/GridContainer/LevelButton4"]
+[editable path="GridContainer/GridContainer/LevelButton5"]
+[editable path="GridContainer/GridContainer/LevelButton6"]
+[editable path="GridContainer/GridContainer/LevelButton7"]
+[editable path="GridContainer/GridContainer/LevelButton8"]
