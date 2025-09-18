@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3bsf2kylbto2"]
+[gd_scene load_steps=10 format=3 uid="uid://d3bsf2kylbto2"]
 
 [ext_resource type="Script" uid="uid://164w6mxcj3dm" path="res://scripts/expanding_side.gd" id="1_8jvfk"]
-[ext_resource type="Texture2D" uid="uid://bbpp5hfle3jjn" path="res://art/Slime-Sheet.png" id="3_w8w7y"]
+[ext_resource type="Texture2D" uid="uid://6d3mjkangi7h" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_8jvfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jvfk"]
-size = Vector2(128, 128)
+size = Vector2(118, 76)
 
 [sub_resource type="Animation" id="Animation_j7os6"]
 resource_name = "Finished"
@@ -60,43 +60,15 @@ _data = {
 &"expanding_side": SubResource("Animation_w8w7y")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gejf4"]
-atlas = ExtResource("3_w8w7y")
-region = Rect2(104, 110, 52, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1g5qk"]
-atlas = ExtResource("3_w8w7y")
-region = Rect2(156, 110, 52, 55)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_w8w7y"]
-atlas = ExtResource("3_w8w7y")
-region = Rect2(208, 110, 52, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_io8bk"]
-atlas = ExtResource("3_w8w7y")
-region = Rect2(260, 110, 52, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfrm2"]
-atlas = ExtResource("3_w8w7y")
-region = Rect2(312, 110, 52, 55)
+atlas = ExtResource("2_8jvfk")
+region = Rect2(82, 88, 45, 22)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yg0uj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gejf4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1g5qk")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_w8w7y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_io8bk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cfrm2")
 }],
 "loop": true,
 "name": &"default",
@@ -110,6 +82,7 @@ collision_mask = 3
 script = ExtResource("1_8jvfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 6)
 shape = SubResource("RectangleShape2D_8jvfk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -118,10 +91,8 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -74)
 scale = Vector2(2.53846, 5.01818)
 sprite_frames = SubResource("SpriteFrames_yg0uj")
 autoplay = "default"
-frame_progress = 0.748892
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

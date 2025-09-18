@@ -13,6 +13,7 @@ config_version=5
 config/name="Rob and Bob: Doomsday"
 run/main_scene="uid://b4uqohdk5bl12"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://b0ixwo46ke13f"
 config/icon="res://prefab/icon.svg"
 
 [autoload]

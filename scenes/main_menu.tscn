@@ -1,52 +1,66 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4uqohdk5bl12"]
+[gd_scene load_steps=15 format=3 uid="uid://b4uqohdk5bl12"]
 
 [ext_resource type="Script" uid="uid://tvqnplvid31p" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://m1oc68t7np6n" path="res://prefab/parallax_background.tscn" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://2mksad5bxh3u" path="res://Menu Buttons/Square Buttons/Square Buttons/Info Square Button.png" id="2_rcqid"]
 [ext_resource type="Texture2D" uid="uid://c7wp71vuo0rkm" path="res://art/Rob-and-Bob-DOOMSDAY-9-9-2025.png" id="2_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://budy6xp826mer" path="res://Menu Buttons/Square Buttons/Colored Square Buttons/Info col_Square Button.png" id="3_1ajci"]
 [ext_resource type="Script" uid="uid://c4vlho0qp350m" path="res://scripts/menubackgroundtrees.gd" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://bb6jpwngoamtq" path="res://art/menuscreen.PNG" id="3_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://drm6l5lxo2jrn" path="res://art/spritesheet1.png" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://bsvf1pdta8s7i" path="res://Menu Buttons/Large Buttons/Large Buttons/Play Button.png" id="4_7b55j"]
+[ext_resource type="Texture2D" uid="uid://dilkw28i50v3v" path="res://Menu Buttons/Large Buttons/Colored Large Buttons/Play col_Button.png" id="5_5pajh"]
+[ext_resource type="Texture2D" uid="uid://t332e8pdsxft" path="res://Menu Buttons/Square Buttons/Square Buttons/On Off Square Button.png" id="6_j7ex8"]
 [ext_resource type="Script" uid="uid://cqyb8kepypin4" path="res://scripts/parallax_background.gd" id="6_oa1go"]
+[ext_resource type="Texture2D" uid="uid://cp0uxvr8jph20" path="res://Menu Buttons/Square Buttons/Colored Square Buttons/On Off col_Square Button.png" id="7_a8gd2"]
+[ext_resource type="PackedScene" uid="uid://d2qss7b33g3kw" path="res://prefab/walkanimation.tscn" id="7_oa1go"]
+[ext_resource type="AudioStream" uid="uid://58531v0djun" path="res://music/mainmenu.mp3" id="14_1ajci"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l6cm7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 450.0
-offset_top = 325.0
-offset_right = 762.0
-offset_bottom = 527.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 325.0
+offset_top = 360.0
+offset_right = 855.0
+offset_bottom = 460.0
+alignment = 1
 
-[node name="start" type="Button" parent="VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer"]
 layout_mode = 2
-text = "Start"
+theme_override_constants/h_separation = 15
+columns = 3
 
-[node name="credits" type="Button" parent="VBoxContainer"]
+[node name="credits" type="TextureButton" parent="HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-text = "Credits"
+texture_normal = ExtResource("2_rcqid")
+texture_pressed = ExtResource("2_rcqid")
+texture_hover = ExtResource("3_1ajci")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="quit" type="Button" parent="VBoxContainer"]
+[node name="play" type="TextureButton" parent="HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-text = "Quit"
+texture_normal = ExtResource("4_7b55j")
+texture_pressed = ExtResource("4_7b55j")
+texture_hover = ExtResource("5_5pajh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="quit" type="TextureButton" parent="HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("6_j7ex8")
+texture_pressed = ExtResource("6_j7ex8")
+texture_hover = ExtResource("7_a8gd2")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(605.081, 170.5)
+position = Vector2(590, 170.5)
 scale = Vector2(0.835135, 0.835135)
 texture = ExtResource("2_rtw2f")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(369, 514)
-scale = Vector2(1.22354, 1.22354)
-texture = ExtResource("3_tbmy8")
-region_enabled = true
-region_rect = Rect2(0, 0, 70, 67.5)
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(368, 447)
-scale = Vector2(1.224, 1.224)
-texture = ExtResource("3_tbmy8")
-region_enabled = true
-region_rect = Rect2(0, 0, 70, 67.5)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_ekxnf")]
 offset = Vector2(0, 300)
@@ -67,6 +81,12 @@ motion_mirroring = Vector2(600, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
 texture = ExtResource("3_bqqt6")
 
-[connection signal="button_down" from="VBoxContainer/start" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="VBoxContainer/credits" to="." method="_on_button_3_button_down"]
-[connection signal="button_down" from="VBoxContainer/quit" to="." method="_on_button_4_button_down"]
+[node name="walkanimation" parent="." instance=ExtResource("7_oa1go")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_1ajci")
+autoplay = true
+
+[connection signal="pressed" from="HBoxContainer/GridContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="HBoxContainer/GridContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/GridContainer/quit" to="." method="_on_quit_pressed"]

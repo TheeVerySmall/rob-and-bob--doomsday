@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://db3oyry2wlur8" path="res://art/Swinging_top.png" id="3_23npq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofkt0"]
-size = Vector2(128, 386)
+size = Vector2(128, 365)
 
 [sub_resource type="Animation" id="Animation_pnqpd"]
 length = 2.0
@@ -63,7 +63,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23npq"]
-size = Vector2(133, 392)
+size = Vector2(133, 372)
 
 [node name="swinging" type="AnimatableBody2D"]
 position = Vector2(1, 0)
@@ -78,7 +78,7 @@ scale = Vector2(0.428637, 0.474097)
 texture = ExtResource("2_ofkt0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 161)
+position = Vector2(3, 150.5)
 shape = SubResource("RectangleShape2D_ofkt0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -91,7 +91,7 @@ autoplay = "swinging"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3.50033, 161)
+position = Vector2(3.50033, 151)
 shape = SubResource("RectangleShape2D_23npq")
 
 [node name="SwingingTop" type="Sprite2D" parent="."]

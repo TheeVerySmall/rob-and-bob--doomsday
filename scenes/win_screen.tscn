@@ -1,22 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqsw68m7xla4p"]
+[gd_scene load_steps=6 format=3 uid="uid://bqsw68m7xla4p"]
 
-[ext_resource type="Script" uid="uid://dicp246ug23gh" path="res://scripts/death_screen.gd" id="1_wv5lq"]
+[ext_resource type="Script" uid="uid://cnauktko8yln6" path="res://scripts/win_screen.gd" id="1_e41g7"]
+[ext_resource type="Texture2D" uid="uid://hrlo3dv3wqv8" path="res://Menu Buttons/Large Buttons/Large Buttons/Back Button.png" id="2_2l6cc"]
+[ext_resource type="Texture2D" uid="uid://l2pim5525r3p" path="res://Menu Buttons/Large Buttons/Colored Large Buttons/Back  col_Button.png" id="3_e41g7"]
+[ext_resource type="Texture2D" uid="uid://cu36ppd03bknv" path="res://art/Backgroundforest.png" id="4_e41g7"]
+[ext_resource type="AudioStream" uid="uid://c5ov3a0sshyai" path="res://music/orchestral-win-331233.mp3" id="5_0lrm4"]
 
 [node name="Node2D3" type="Node2D"]
-script = ExtResource("1_wv5lq")
-
-[node name="Button" type="Button" parent="."]
-offset_left = 430.0
-offset_top = 363.0
-offset_right = 745.0
-offset_bottom = 491.0
-text = "Return to levels"
+script = ExtResource("1_e41g7")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 429.0
-offset_top = 165.0
-offset_right = 741.0
-offset_bottom = 240.0
-text = "Congrats fellas, you two must be the goated duo 🤑🤑🤑🤑"
+offset_left = 186.0
+offset_top = 268.0
+offset_right = 1017.0
+offset_bottom = 434.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[shake]YOU GUYS BEAT THE LEVEL!!!"
+horizontal_alignment = 1
 
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 1154.0
+offset_bottom = 649.0
+texture = ExtResource("4_e41g7")
+
+[node name="Back" type="TextureButton" parent="."]
+offset_left = 445.0
+offset_top = 386.0
+offset_right = 732.0
+offset_bottom = 479.0
+texture_normal = ExtResource("2_2l6cc")
+texture_pressed = ExtResource("2_2l6cc")
+texture_hover = ExtResource("3_e41g7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0lrm4")
+autoplay = true
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,143 @@
+[gd_scene load_steps=13 format=3 uid="uid://cokrxasdycc2n"]
+
+[ext_resource type="Texture2D" uid="uid://cu36ppd03bknv" path="res://art/Backgroundforest.png" id="1_0bpdh"]
+[ext_resource type="Script" uid="uid://dcphiuishq4oe" path="res://scripts/credits.gd" id="1_2fbfq"]
+[ext_resource type="Texture2D" uid="uid://hrlo3dv3wqv8" path="res://Menu Buttons/Large Buttons/Large Buttons/Back Button.png" id="2_0ctdu"]
+[ext_resource type="Texture2D" uid="uid://l2pim5525r3p" path="res://Menu Buttons/Large Buttons/Colored Large Buttons/Back  col_Button.png" id="3_2fbfq"]
+[ext_resource type="Texture2D" uid="uid://bv1qteb0qmnpu" path="res://art/bomb.png" id="5_8gwij"]
+[ext_resource type="AudioStream" uid="uid://cvjr4muaab25n" path="res://music/ling-gang-guli-guli-watcha-made.mp3" id="6_mah5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnaij"]
+atlas = ExtResource("5_8gwij")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3xc6"]
+atlas = ExtResource("5_8gwij")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s36qc"]
+atlas = ExtResource("5_8gwij")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qxox"]
+atlas = ExtResource("5_8gwij")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gthg3"]
+atlas = ExtResource("5_8gwij")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mah5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnaij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3xc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s36qc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qxox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gthg3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fbfq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+texture = ExtResource("1_0bpdh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 45.0
+offset_right = 733.0
+offset_bottom = 138.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 67
+bbcode_enabled = true
+text = "[shake]CREDITS"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 145.0
+offset_right = 687.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "ROB AND BOB DOOMSDAY"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 204.0
+offset_right = 885.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Created by Ryan Zhang and Joseph Ke"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 257.0
+offset_right = 884.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "Online Assets:
+Tilemap - AlwaysRice
+(https://alwaysrice.itch.io/mini-legend)
+
+Menu Buttons 
+- Nectanebo
+(https://nectanebo.itch.io/menu-buttons)
+- Prinbles
+(https://prinbles.itch.io/robin)
+
+Music - Pixabay
+"
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 153.0
+offset_bottom = 53.0
+texture_normal = ExtResource("2_0ctdu")
+texture_pressed = ExtResource("2_0ctdu")
+texture_hover = ExtResource("3_2fbfq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(957, 372)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_mah5v")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mah5v")
+autoplay = true
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
